@@ -48,3 +48,25 @@ plot(country,cases, las=3, cex.axis=0.5)
 install.packages("ggplot2")
 library(ggplot2)
 #to save datas in R
+
+#load R datas, setting the working directory (wd)
+load("R_covid.RData")
+#let's see the data we have by the function ls()
+ls()
+
+#let's use ggplot for fancy plots
+library(ggplot2)
+data(mpg)
+head(mpg)
+#key components: data, aes, geometry
+
+ggplot(mpg, aes(x=displ, y=hwy)) + geom_point()
+
+#let's change the geometry of the graph
+ggplot(mpg, aes(x=displ, y=hwy)) + geom_line()
+ggplot(mpg, aes(x=displ, y=hwy)) + geom_polygon()
+
+head(covid)
+ggplot(covid, aes(x=lon, y=lat, size=cases)) + geom_point()
+
+
